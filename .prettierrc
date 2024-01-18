@@ -1,0 +1,18 @@
+{
+	"overrides": [
+		{
+			"files": ["*.yaml", "*.yml"],
+			"options": {
+				"tabWidth": 2
+			}
+		}
+	],
+	"printWidth": 120,
+	"quoteProps": "consistent",
+	"tabWidth": 4,
+	"trailingComma": "all",
+	"useTabs": true,
+	"importOrder": ["^@datalegaldrive/(.*)$", "^[./]"],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

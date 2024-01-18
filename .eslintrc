@@ -1,0 +1,53 @@
+{
+	"env": {
+		"browser": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module"
+	},
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"ignorePatterns": ["*.html", "dist/**/*", "node_modules/**/*", "coverage/**/*", "html/**/*"],
+	"rules": {
+		"no-console": ["warn", { "allow": ["error"] }],
+		"react-hooks/rules-of-hooks": "error",
+		"react/react-in-jsx-scope": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"@typescript-eslint/no-explicit-any": ["warn"],
+		"@typescript-eslint/no-empty-function": ["warn"],
+		"@typescript-eslint/no-empty-interface": ["warn"],
+		"@typescript-eslint/no-duplicate-enum-values": ["warn"],
+		"no-restricted-syntax": [
+			"error",
+			{
+				"selector": "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
+				"message": "Default React import not allowed. Use import * as React from 'react'"
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["**/*.test.{ts,tsx}"],
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "off",
+				"@typescript-eslint/no-non-null-assertion": "off"
+			}
+		}
+	],
+	"settings": {
+		"react": {
+			"version": "17.0.2"
+		}
+	}
+}
